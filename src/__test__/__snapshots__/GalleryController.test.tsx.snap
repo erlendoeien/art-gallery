@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class="galleryHeader"
+    >
+      <button
+        class="viewModeButton  iconButton"
+        type="button"
+      >
+        <svg>
+          view_day-black-18dp.svg
+        </svg>
+      </button>
+      <button
+        class="viewModeButton activeView iconButton"
+        type="button"
+      >
+        <svg>
+          view_module-black-18dp.svg
+        </svg>
+      </button>
+    </div>
+    <div
+      class="galleryView"
+    >
+      <main>
+        <h1>
+          Her er det ingen kunstverk...
+        </h1>
+        <p
+          style="font-style: italic;"
+        >
+          Hvis det er noen kunstverk du vil ha lettere tilgang på, kan du trykke på hjertene for hvert kunstverk! Da vil de dukke opp under "Lagrede kuntverk"!
+        </p>
+      </main>
+    </div>
+  </div>
+</div>
+`;

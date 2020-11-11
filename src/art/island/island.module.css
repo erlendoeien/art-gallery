@@ -1,0 +1,43 @@
+.svgMoody {
+    background: rgb(49, 135, 168);
+    background: linear-gradient(
+        rgba(49, 135, 168, 1) 0%,
+        rgba(133, 138, 143, 1) 58%,
+        rgba(161, 202, 241, 1) 100%
+    );
+}
+
+.svgHappy {
+    background: rgb(168, 97, 49);
+    background: linear-gradient(
+        45deg,
+        rgba(168, 97, 49, 1) 0%,
+        rgba(203, 154, 63, 1) 58%,
+        rgba(230, 236, 173, 1) 100%
+    );
+}
+
+.island {
+    clip-path: url(#islandClip);
+    fill: url(#groundGradient);
+}
+
+.ocean {
+    fill: url(#oceanBackground);
+}
+
+.trunk {
+    fill: url(#treeTrunk);
+}
+
+.leafContainer {
+    fill: url(#leafGradient);
+}
+
+.leaf {
+    fill: url(#leafGradient);
+}
+
+.drop {
+    fill: url(#dropGradient);
+}

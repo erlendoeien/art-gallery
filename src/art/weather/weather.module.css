@@ -1,0 +1,27 @@
+#sun {
+    fill: #ffe160;
+  }
+
+#sunBeam {
+fill: #ffe160;
+stroke: #fbeC5d;
+stroke-width: 3;
+stroke-linecap: round;
+}
+
+
+.raindrop {
+    animation: rain 0.5s linear infinite;
+}
+
+@keyframes rain {
+    0% {
+        transform: translate(100px, -200px);
+    }
+    50% {
+        transform: translate(0px, 0px);
+    }
+    100% {
+        transform: translate(-80px, 160px);
+    }
+  }

@@ -1,0 +1,102 @@
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.artModal {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    position: absolute;
+    /* background: #fff; */
+    top: 10vh;
+    left: 10%;
+    right: 10%;
+    bottom: 10vh;
+}
+.darkButton > svg {
+    fill: #fff;
+}
+
+.modalContent {
+    margin: 0;
+    /* Move scrollbar to the right*/
+    padding-right: max(1vw, 1vh);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.navButton {
+    position: fixed;
+    /* Centered  vertically */
+    top: calc(50vh - 4.5vw);
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+}
+.navButton svg {
+    border-radius: 50%;
+}
+
+.exitButton {
+    display: inline-flex;
+    align-self: flex-end;
+    margin-right: 1vw;
+    max-width: 30px;
+    max-height: 30px;
+}
+
+.exitButton > svg:hover {
+    fill: palevioletred;
+}
+
+.nextButton {
+    right: 3vw;
+}
+
+.prevButton {
+    left: 3vw;
+}
+
+@media screen and (orientation: portrait) {
+    .artModal {
+        top: 15vh;
+        bottom: 10vh;
+    }
+}
+
+/* Avoid issues with mobile devices */
+@media (hover: hover) {
+    .navButton:hover svg {
+        background-color: rgba(255, 255, 255, 0.7);
+        transition: all 0.1s ease-in-out;
+        transform: scale(1.1);
+        fill: #000;
+    }
+}
+
+@media screen and (orientation: landscape) and (max-width: 797px) {
+    .artModal {
+        top: 17vh;
+        bottom: 8vh;
+        right: 5vw;
+        left: 5vw;
+    }
+}
+
+/* Better placement on mobile*/
+@media screen and (max-width: 797px) {
+    .modalContent {
+        margin: 0 0 max(1vw, 1vh) max(1vw, 1vh);
+    }
+
+    .nextButton {
+        right: 0;
+    }
+    .prevButton {
+        left: 0;
+    }
+}

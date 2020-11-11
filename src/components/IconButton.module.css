@@ -1,0 +1,23 @@
+.iconButton {
+    background-color: transparent;
+    border: none;
+    font-size: 2vh;
+    padding: 0;
+}
+
+.iconButton > svg {
+    width: max(4vh, 4vw);
+    height: max(4vh, 4vw);
+    max-width: 48px;
+    max-height: 48px;
+}
+
+.iconButton:hover {
+    transition: all 0.1s ease-in-out;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}

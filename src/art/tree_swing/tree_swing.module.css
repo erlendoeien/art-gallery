@@ -1,0 +1,28 @@
+#swing_fast {
+    transform-origin: 580px 370px;
+    animation: swingFastAnimation 1s ease-in-out infinite alternate;
+}
+
+@keyframes swingFastAnimation {
+    from {
+        transform: rotate(-45deg);
+    }
+    to {
+        transform: rotate(45deg);
+    }
+}
+
+#swing_slow {
+    transform-origin: 580px 370px;
+    animation: swingSlowAnimation 3s ease-in-out infinite alternate;
+}
+
+@keyframes swingSlowAnimation {
+    from {
+        transform: rotate(-10deg);
+    }
+    to {
+        transform: rotate(10deg);
+    }
+}
+

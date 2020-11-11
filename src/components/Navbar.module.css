@@ -1,0 +1,177 @@
+/* Navigation */
+.navLinks {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+.navbar {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    padding: 1.5vh;
+}
+.navLinks li {
+    padding: 5px 10px;
+    list-style-type: none;
+}
+.nav_link {
+    font-size: 1.2rem;
+    font-weight: 600;
+    opacity: 0.6;
+
+    text-decoration: none;
+    color: #e73c7e;
+}
+.navLinks li a:hover {
+    font-size: 1.4rem;
+    transition: font-size 0.5s ease;
+    opacity: 1;
+}
+
+.activeNavLink {
+    font-weight: 900;
+    opacity: 1;
+}
+
+/* Toggle theme button  code: https://www.w3schools.com/howto/howto_css_switch.asp*/
+.switch {
+    position: absolute;
+    right: 30px;
+    top: 13px;
+    display: inline-block;
+    width: 50px;
+    height: 3vh;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+/* Settings button */
+.settingsBtn {
+    position: absolute;
+    right: 100px;
+}
+.settings {
+    width: fit-content;
+    padding: 20px 30px 40px 30px;
+    z-index: 10;
+    position: absolute;
+    right: 10px;
+    top: 50px;
+    border-radius: 30px;
+    box-shadow: 1px 1px 3px #a6a6a6;
+}
+
+.settings h2 {
+    text-align: center;
+    font-weight: 800;
+}
+.noSettings {
+    display: none;
+}
+
+#navIcon {
+    display: none;
+}
+
+/* Mobilescreen */
+@media (max-width: 797px) {
+    .navLinks {
+        display: none;
+    }
+    .navLinks.toggled {
+        display: flex;
+        flex-direction: column;
+        margin-top: 35px;
+    }
+    .settingsBtn {
+        right: 20px;
+        top: 5px;
+    }
+    .settings {
+        right: 0px;
+    }
+
+    /* Hamburger menu 
+* Source: https://codepen.io/designcouch/pen/Atyop
+*/
+
+    #navIcon span:nth-child(1) {
+        top: 0px;
+        -webkit-transform-origin: left center;
+        -moz-transform-origin: left center;
+        -o-transform-origin: left center;
+        transform-origin: left center;
+    }
+
+    #navIcon span:nth-child(2) {
+        top: 10px;
+        -webkit-transform-origin: left center;
+        -moz-transform-origin: left center;
+        -o-transform-origin: left center;
+        transform-origin: left center;
+    }
+
+    #navIcon span:nth-child(3) {
+        top: 20px;
+        -webkit-transform-origin: left center;
+        -moz-transform-origin: left center;
+        -o-transform-origin: left center;
+        transform-origin: left center;
+    }
+
+    #navIcon.open span:nth-child(1) {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    #navIcon.open span:nth-child(2) {
+        width: 0%;
+        opacity: 0;
+    }
+
+    #navIcon.open span:nth-child(3) {
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        top: 21px;
+    }
+    #navIcon {
+        width: 30px;
+        height: 1vh;
+        position: absolute;
+        left: 10px;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: 0.5s ease-in-out;
+        -moz-transition: 0.5s ease-in-out;
+        -o-transition: 0.5s ease-in-out;
+        transition: 0.5s ease-in-out;
+        cursor: pointer;
+        display: unset;
+    }
+
+    #navIcon span {
+        display: block;
+        position: absolute;
+        height: 5px;
+        width: 100%;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: 0.25s ease-in-out;
+        -moz-transition: 0.25s ease-in-out;
+        -o-transition: 0.25s ease-in-out;
+        transition: 0.25s ease-in-out;
+    }
+}

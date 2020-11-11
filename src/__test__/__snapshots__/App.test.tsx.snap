@@ -1,0 +1,193 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <div
+    class="app"
+    style="background-color: rgb(255, 255, 255); color: rgb(30, 30, 30);"
+  >
+    <div
+      class="navbar"
+      style="background-color: rgb(238, 238, 238); box-shadow: -1px 0px 15px 0px #A6A6A6; height: 30px;"
+    >
+      <div
+        class=""
+        id="navIcon"
+        role="button"
+        tabindex="0"
+      >
+        <span
+          style="background: rgb(30, 30, 30);"
+        />
+        <span
+          style="background: rgb(30, 30, 30);"
+        />
+        <span
+          style="background: rgb(30, 30, 30);"
+        />
+      </div>
+      <div
+        class="settingsBtn"
+      >
+        <input
+          alt="instillinger-knapp"
+          height="30px"
+          src="settings.png"
+          type="image"
+        />
+      </div>
+      <div
+        class="noSettings"
+        style="background-color: rgb(255, 255, 255);"
+      >
+        <div>
+          <h2
+            style="color: rgb(30, 30, 30);"
+          >
+            Tilpass siden
+          </h2>
+          <h3
+            style="color: rgb(30, 30, 30);"
+          >
+            Velg mellom dark mode eller light mode:
+          </h3>
+          <div
+            class="flexWrapper"
+          >
+            <label
+              class="switch"
+              for="darkmode"
+            >
+              <input
+                id="darkmode"
+                type="checkbox"
+              />
+              <span
+                class="slider"
+              />
+            </label>
+            <img
+              alt="Sol eller måne"
+              class="themeIcon"
+              src="sun.png"
+            />
+          </div>
+          <h3
+            style="color: rgb(30, 30, 30);"
+          >
+             
+            Hvilket humør er du i dag? 
+            <br />
+            Velg mellom glade eller triste kunstverk:
+          </h3>
+          <div
+            class="flexWrapper"
+          >
+            <label
+              class="switch"
+              for="mood"
+            >
+              <input
+                checked=""
+                id="mood"
+                type="checkbox"
+              />
+              <span
+                class="slider"
+              />
+            </label>
+            <img
+              alt="Glad eller Trist"
+              class="themeIcon"
+              src="sad.png"
+            />
+          </div>
+        </div>
+      </div>
+      <ul
+        class="navLinks "
+      >
+        <li>
+          <a
+            aria-current="page"
+            class="nav_link activeNavLink"
+            href="/"
+            style="color: rgb(30, 30, 30);"
+          >
+            Forside
+          </a>
+        </li>
+        <li>
+          <a
+            class="nav_link"
+            href="/utstilling"
+            style="color: rgb(30, 30, 30);"
+          >
+            Utstilling
+          </a>
+        </li>
+        <li>
+          <a
+            class="nav_link"
+            href="/favoritter"
+            style="color: rgb(30, 30, 30);"
+          >
+            Favoritter
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div
+      class="wrapper"
+    >
+      <div
+        class="landingpageText"
+      >
+        <h1>
+          Velkommen til vektorgalleriet!
+        </h1>
+        <h2>
+          Stedet der du kan tilpasse kunsten til humøret ditt!
+        </h2>
+        <a
+          href="/utstilling"
+        >
+          Ta en titt på utstillingen!
+        </a>
+      </div>
+      <div
+        class="illustration"
+      >
+        <div
+          class="glad"
+        >
+          <img
+            alt=""
+            class="landingpageIconsHappy"
+            src="sun.png"
+          />
+          <img
+            alt=""
+            class="landingpageIconsHappy"
+            src="emoji.png"
+          />
+        </div>
+        <div
+          class="trist"
+        >
+          <img
+            alt=""
+            class="landingpageIconsSad"
+            src="water.png"
+          />
+          <img
+            alt=""
+            class="landingpageIconsSad"
+            src="sad.png"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

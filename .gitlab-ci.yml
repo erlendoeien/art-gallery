@@ -1,0 +1,42 @@
+image: node:latest
+
+# Hack CI
+cache:
+    paths:
+        - node_modules/
+
+CI:
+    script:
+        - npm install
+        - npm run build
+        - npm run lint
+        - npm run test
+# stages:
+#     - lint
+#     - build
+#     - test
+
+# # This folder is cached between builds
+# # http://docs.gitlab.com/ce/ci/yaml/README.html#cache
+# cache:
+#     paths:
+#         - node_modules/
+
+# install:
+#     stage: lint
+#     script:
+#         - npm install
+
+# building:
+#     stage: build
+#     script:
+#         - npm run build
+#     artifacts:
+#         paths:
+#             - node_modules/
+# testing:
+#     stage: test
+#     script:
+#         - npm run lint
+#         # Could use -- --watchAll, but seems slower
+#         - npm run test

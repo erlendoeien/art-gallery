@@ -1,0 +1,66 @@
+.container {
+    margin: 3vh 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.galleryView {
+    width: 100%;
+    margin-top: 3vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    gap: min(3vw, 3vh);
+}
+
+.galleryHeader button {
+    margin: 0.5vw;
+}
+
+.activeView {
+    opacity: 0.3;
+}
+.activeView > svg {
+    fill: palevioletred;
+}
+
+.galleryView > * {
+    width: max(20vw, 20vh);
+}
+.galleryView > main {
+    width: 100%;
+}
+
+.scrollView {
+    margin: 3vw 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+
+.viewModeButton {
+    display: inline-flex;
+    align-self: center;
+    margin: 0.5vh 3vw;
+    max-width: 30px;
+    max-height: 30px;
+}
+
+/* Not stuck on mobile screens*/
+@media (hover: hover) {
+    .viewModeButton:hover {
+        transition: all 0.1s ease-in-out;
+        transform: scale(1.2);
+    }
+    .viewModeButton:hover svg {
+        fill: palevioletred;
+    }
+
+    .activeView:hover {
+        transition: none;
+        transform: none;
+        cursor: auto;
+    }
+}

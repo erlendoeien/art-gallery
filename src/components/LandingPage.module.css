@@ -1,0 +1,173 @@
+.wrapper {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    height: 93vh;
+    min-width: 100vw;
+    overflow: hidden;
+}
+
+.illustration {
+    position: relative;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 8s ease infinite;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%, 18% 50%);
+    width: 100%;
+}
+.landingpageIconsHappy {
+    width: 4vw;
+    height: auto;
+    animation: changeSize 8s ease infinite;
+}
+.landingpageIconsSad {
+    width: 4vw;
+    height: auto;
+    animation: changeSize 8s ease infinite;
+    animation-delay: 4s;
+}
+.trist {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: sad 8s ease infinite;
+    animation-delay: 4s;
+}
+.glad {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    animation: happy 8s ease infinite;
+}
+.landingpageText {
+    position: relative;
+    align-self: center;
+    text-align: center;
+    padding-left: 45px;
+}
+.landingpageText a {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 15px 40px;
+    border-radius: 30px;
+    background-color: #e73c7e;
+    border: none;
+}
+.landingpageText a:hover {
+    color: #e73c7e;
+    background-color: transparent;
+    border: 1px solid#e73c7e;
+}
+h1 {
+    font-size: 4rem;
+}
+
+/* inspirasjon funnet på https://codepen.io/P1N2O/pen/pyBNzX */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes happy {
+    0% {
+        bottom: 0;
+        right: 0;
+    }
+    50% {
+        bottom: 35vh;
+        right: 10vw;
+    }
+    100% {
+        bottom: 0;
+        right: 0;
+    }
+}
+
+@keyframes sad {
+    0% {
+        visibility: visible;
+        top: 0;
+        left: 0;
+    }
+    50% {
+        top: 40vh;
+        left: 15vw;
+    }
+    100% {
+        top: 0;
+        left: 0;
+    }
+}
+
+@keyframes changeSize {
+    0% {
+        width: 4vw;
+        opacity: 0;
+    }
+    50% {
+        width: 10vw;
+        opacity: 1;
+    }
+    65% {
+        opacity: 0.1;
+    }
+    100% {
+        width: 4vw;
+        opacity: 0;
+    }
+}
+
+/* Mobilescreen */
+@media (max-width: 797px) {
+    h1 {
+        margin: 0 auto;
+        font-size: 2rem;
+    }
+    .wrapper {
+        flex-direction: column-reverse;
+        overflow: hidden;
+    }
+    .landingpageText {
+        padding: 20px;
+        height: 60vh;
+    }
+    .landingpageText h2 {
+        font-weight: 500;
+        font-size: 1.3rem;
+    }
+    .glad {
+        display: none;
+    }
+    .trist {
+        display: none;
+    }
+    .landingpageText > a {
+        padding: 4px 0;
+        width: 70%;
+        margin: 0 auto;
+    }
+    .illustration {
+        min-height: 37.5vh;
+        clip-path: unset;
+    }
+}
+
+/* @media screen and (max-width: 797px) and (orientation: landscape) {
+    .app {
+        overflow-y: auto;
+    }
+} */

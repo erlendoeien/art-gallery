@@ -1,0 +1,117 @@
+.container {
+    display: grid;
+    grid-template-columns: 0.5fr repeat(4, 1fr) 0.5fr;
+    grid-template-rows: auto;
+    gap: max(1vh, 1vw);
+}
+
+.header {
+    grid-column: 2/6;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    margin: 0;
+}
+.header h1 {
+    margin: 0;
+}
+
+.header > * {
+    margin-bottom: 0;
+}
+
+.artworkContainer {
+    position: relative;
+    grid-row: 2 / auto;
+    grid-column: 2/4;
+}
+
+.playButton {
+    position: absolute;
+    top: 1vh;
+    left: 1vw;
+    opacity: 0.5;
+}
+
+.playButton:hover {
+    opacity: 1;
+}
+.playButton > svg {
+    fill: #1e1e1e;
+}
+
+.poemContainer {
+    grid-column: 4/6;
+}
+
+.darkButton > svg {
+    fill: #fff;
+}
+.isFavorite svg {
+    fill: #c21e56;
+}
+
+.favoriteButton {
+    display: inline-flex;
+    align-self: center;
+    max-width: 48px;
+    max-height: 48px;
+}
+.favoriteButton > svg:hover {
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.2);
+    fill: #c21e56;
+}
+
+.poemHeader h4 {
+    margin: 0 0 1vh 0;
+}
+
+.poem {
+    /* Include whitespace at the start of paragraphs */
+    white-space: pre;
+}
+
+.poem > p {
+    margin: min(0.7vh, 0.7vw);
+    min-height: 0.5em;
+}
+
+/* Mobile screen*/
+@media screen and (orientation: portrait) and (max-width: 797px) {
+    .artworkContainer {
+        grid-column: span 6;
+    }
+
+    .header {
+        grid-column: span 6;
+    }
+    .poemContainer {
+        grid-column: span 6;
+    }
+    .poem {
+        font-size: small;
+        overflow-x: auto;
+    }
+    .poem::-webkit-scrollbar {
+        height: 0.5vh;
+    }
+}
+
+/* Mobile screen*/
+@media screen and (orientation: landscape) and (max-width: 797px) {
+    .header {
+        grid-column: span 6;
+    }
+    .artworkContainer {
+        grid-column: 1/4;
+    }
+
+    .poemContainer {
+        grid-column: 4/6;
+    }
+    .poem {
+        font-size: x-small;
+    }
+}

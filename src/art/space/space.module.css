@@ -1,0 +1,51 @@
+.face {
+    stroke: black;
+    stroke-width: 0.01;
+    fill: url(#alienGradient);
+}
+
+.eye {
+    fill: url(#eyesGradient);
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+.leftEye {
+    transform: rotate(70deg);
+}
+
+.rightEye {
+    transform: rotate(-70deg);
+}
+
+.mouth {
+    fill: #f8f7ed;
+    stroke-width: 0.01;
+    stroke: black;
+    clip-path: url(#cut-off-top);
+}
+
+.sadMouth {
+    fill: #f8f7ed;
+    stroke-width: 0.01;
+    stroke: black;
+    clip-path: url(#cut-off-bottom);
+}
+
+.space {
+    background: linear-gradient(14deg, #020024, #0d4f5c, #08083c);
+    background-size: 600% 600%;
+    animation: Gradient 20s ease infinite;
+}
+
+@keyframes Gradient {
+    0% {
+        background-position: 94% 0%;
+    }
+    50% {
+        background-position: 7% 100%;
+    }
+    100% {
+        background-position: 75% 0%;
+    }
+}
