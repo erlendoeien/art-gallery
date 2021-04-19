@@ -1,18 +1,18 @@
 import { ArtPaths } from '../utils/types';
 // Workaround for typescript as it complains with ES6
 /* eslint-disable @typescript-eslint/no-var-requires */
-const spaceMoodyAudio = require('../sounds/space_moody.mp3');
-const spaceHappyAudio = require('../sounds/space_happy.mp3');
-const islandMoodyAudio = require('../sounds/island_moody.mp3');
-const islandHappyAudio = require('../sounds/island_happy.mp3');
-const snowHappyAudio = require('../sounds/snow_happy.mp3');
-const snowMoodyAudio = require('../sounds/snow_moody.mp3');
-const weatherHappyAudio = require('../sounds/weather_happy.mp3');
-const weatherMoodyAudio = require('../sounds/weather_moody.mp3');
-const treeSwingHappyAudio = require('../sounds/tree_swing_happy.mp3');
-const treeSwingMoodyAudio = require('../sounds/tree_swing_moody.mp3');
-const sunsetMoodyAudio = require('../sounds/sunset_moody.mp3');
-const sunsetHappyAudio = require('../sounds/sunset_happy.mp3');
+import spaceMoodyAudio from '../sounds/space_moody.mp3';
+import spaceHappyAudio from '../sounds/space_happy.mp3';
+import islandMoodyAudio from '../sounds/island_moody.mp3';
+import islandHappyAudio from '../sounds/island_happy.mp3';
+import snowHappyAudio from '../sounds/snow_happy.mp3';
+import snowMoodyAudio from '../sounds/snow_moody.mp3';
+import weatherHappyAudio from '../sounds/weather_happy.mp3';
+import weatherMoodyAudio from '../sounds/weather_moody.mp3';
+import treeSwingHappyAudio from '../sounds/tree_swing_happy.mp3';
+import treeSwingMoodyAudio from '../sounds/tree_swing_moody.mp3';
+import sunsetMoodyAudio from '../sounds/sunset_moody.mp3';
+import sunsetHappyAudio from '../sounds/sunset_happy.mp3';
 
 /**
  * Hardcoded paths for the art. Not supposed to to any handle, just store info
