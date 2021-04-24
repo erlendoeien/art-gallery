@@ -1,21 +1,21 @@
 // eslint-disable-next-line
 import React, { FunctionComponent, useEffect, useState, useContext } from 'react';
 import { Link, useRouteMatch, Route, Switch } from 'react-router-dom';
-import ArtModal from './ArtModal';
-import Art from './Art';
+import ArtModal from '../Art/ArtModal';
+import Art from '../Art';
 import Gallery from './Gallery';
-import ArtThumbnail from './ArtThumbnail';
-import { ReactComponent as GalleryIconBlack } from '../svg/view_module-black-18dp.svg';
-import { ReactComponent as GalleryIconWhite } from '../svg/view_module-white-48dp.svg';
-import { ReactComponent as ScrollIconBlack } from '../svg/view_day-black-18dp.svg';
-import { ReactComponent as ScrollIconWhite } from '../svg/view_day-white-48dp.svg';
-import { Artwork, Poem } from '../utils/types';
-import artList from '../art/artList';
-import fetchArt from '../utils/fetchArt';
-import fetchPoems from '../utils/fetchPoems';
-import { MoodContext } from './MoodProvider';
-import { ThemeContext } from './ThemeProvider';
-import { LocalStorage, SessionStorage } from '../utils/webStorageWrapper';
+import ArtThumbnail from '../Art/ArtThumbnail';
+import { ReactComponent as GalleryIconBlack } from '../../svg/view_module-black-18dp.svg';
+import { ReactComponent as GalleryIconWhite } from '../../svg/view_module-white-48dp.svg';
+import { ReactComponent as ScrollIconBlack } from '../../svg/view_day-black-18dp.svg';
+import { ReactComponent as ScrollIconWhite } from '../../svg/view_day-white-48dp.svg';
+import { Artwork, Poem } from '../../utils/types';
+import artList from '../../art/artList';
+import fetchArt from '../../utils/fetchArt';
+import fetchPoems from '../../utils/fetchPoems';
+import { MoodContext } from '../MoodProvider';
+import { ThemeContext } from '../ThemeProvider';
+import { LocalStorage, SessionStorage } from '../../utils/webStorageWrapper';
 
 type ViewMode = 'scrollView' | 'galleryView';
 

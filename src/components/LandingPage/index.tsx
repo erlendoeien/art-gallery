@@ -1,9 +1,9 @@
 // eslint-disable-next-line
 import React from 'react';
-import Sun from '../svg/sun.png';
-import HappyFace from '../svg/emoji.png';
-import RainDrop from '../svg/water.png';
-import SadFace from '../svg/sad.png';
+import Sun from '../../svg/sun.png';
+import HappyFace from '../../svg/emoji.png';
+import RainDrop from '../../svg/water.png';
+import SadFace from '../../svg/sad.png';
 import styles from './LandingPage.module.css';
 
 const LandingPage: React.FC = () => (

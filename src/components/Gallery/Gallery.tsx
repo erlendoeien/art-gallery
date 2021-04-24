@@ -1,7 +1,7 @@
 // eslint-disable-next-line
 import React from 'react';
 import styles from './Gallery.module.css';
-import IconButton from './IconButton';
+import IconButton from '../IconButton';
 
 interface GalleryProps {
     artComponents: () => JSX.Element[] | JSX.Element;

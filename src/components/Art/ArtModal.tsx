@@ -2,14 +2,14 @@
 import React, { MouseEvent, useState, useEffect, useContext, useRef } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import styles from './ArtModal.module.css';
-import Art from './Art';
-import { Artwork } from '../utils/types';
-import { ReactComponent as ExitIcon } from '../svg/clear-black-24dp.svg';
-import { ReactComponent as Previous } from '../svg/navigate_before-black-48dp.svg';
-import { ReactComponent as Next } from '../svg/navigate_next-black-48dp.svg';
-import { MoodContext } from './MoodProvider';
-import IconButton from './IconButton';
-import { ThemeContext } from './ThemeProvider';
+import Art from './index';
+import { Artwork } from '../../utils/types';
+import { ReactComponent as ExitIcon } from '../../svg/clear-black-24dp.svg';
+import { ReactComponent as Previous } from '../../svg/navigate_before-black-48dp.svg';
+import { ReactComponent as Next } from '../../svg/navigate_next-black-48dp.svg';
+import { MoodContext } from '../MoodProvider';
+import IconButton from '../IconButton';
+import { ThemeContext } from '../ThemeProvider';
 
 interface ModalProps {
     artworks: Artwork[];

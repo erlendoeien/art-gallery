@@ -1,7 +1,7 @@
 // eslint-disable-next-line
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import GalleryController from './components/GalleryController';
+import GalleryController from './components/Gallery/GalleryController';
 import LandingPage from './components/LandingPage';
 import Navbar from './components/Navbar';
 import { ThemeContext } from './components/ThemeProvider';

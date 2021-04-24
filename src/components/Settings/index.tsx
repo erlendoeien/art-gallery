@@ -1,12 +1,12 @@
 // eslint-disable-next-line
 import React, { FunctionComponent, useContext } from 'react';
-import { MoodContext } from './MoodProvider';
+import { MoodContext } from '../MoodProvider';
 import styles from './Settings.module.css';
-import { ThemeContext } from './ThemeProvider';
-import happy from '../svg/emoji.png';
-import sad from '../svg/sad.png';
-import sun from '../svg/sun.png';
-import moon from '../svg/moon.png';
+import { ThemeContext } from '../ThemeProvider';
+import happy from '../../svg/emoji.png';
+import sad from '../../svg/sad.png';
+import sun from '../../svg/sun.png';
+import moon from '../../svg/moon.png';
 
 const Settings: FunctionComponent = () => {
     const { fontColor, toggleTheme, isDarkTheme } = useContext(ThemeContext);
