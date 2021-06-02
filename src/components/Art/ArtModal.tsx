@@ -7,9 +7,10 @@ import { Artwork } from '../../utils/types';
 import { ReactComponent as ExitIcon } from '../../svg/clear-black-24dp.svg';
 import { ReactComponent as Previous } from '../../svg/navigate_before-black-48dp.svg';
 import { ReactComponent as Next } from '../../svg/navigate_next-black-48dp.svg';
-import { MoodContext } from '../MoodProvider';
 import IconButton from '../IconButton';
 import { ThemeContext } from '../ThemeProvider';
+import { useAppSelector } from '../../app/hooks';
+import { Mood } from '../Settings/moodSlice';
 
 interface ModalProps {
     artworks: Artwork[];
@@ -27,7 +28,8 @@ const ArtModal = (props: ModalProps): JSX.Element => {
     const [artIndex, setArtIndex] = useState(
         artworks.findIndex(({ art }) => art.artDir === artDir)
     );
-    const { mood } = useContext(MoodContext);
+    const { mood } = useAppSelector((state) => state.mood);
+    const isMoody = mood === Mood.moody;
     const { backgroundColor, isDarkTheme } = useContext(ThemeContext);
     const history = useHistory();
     // To avoid indexing artworks everytime
@@ -109,14 +111,12 @@ const ArtModal = (props: ModalProps): JSX.Element => {
                                 poem={currentArtwork.poem}
                                 artwork={{
                                     title: currentArtwork.art.title,
-                                    Image:
-                                        mood === 'moody'
-                                            ? currentArtwork.art.displayMoody()
-                                            : currentArtwork.art.displayHappy(),
-                                    audioPath:
-                                        mood === 'moody'
-                                            ? currentArtwork.art.moodyAudio
-                                            : currentArtwork.art.happyAudio
+                                    Image: isMoody
+                                        ? currentArtwork.art.displayMoody()
+                                        : currentArtwork.art.displayHappy(),
+                                    audioPath: isMoody
+                                        ? currentArtwork.art.moodyAudio
+                                        : currentArtwork.art.happyAudio
                                 }}
                                 isFavorite={favorites.includes(currentArtwork.art.title)}
                                 toggleFavorite={toggleFavorite}

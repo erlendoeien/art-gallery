@@ -1,16 +1,19 @@
 // eslint-disable-next-line
 import React, { FunctionComponent, useContext } from 'react';
-import { MoodContext } from '../MoodProvider';
 import styles from './Settings.module.css';
 import { ThemeContext } from '../ThemeProvider';
 import happy from '../../svg/emoji.png';
 import sad from '../../svg/sad.png';
 import sun from '../../svg/sun.png';
 import moon from '../../svg/moon.png';
+import { Mood, moodToggled } from './moodSlice';
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
 
 const Settings: FunctionComponent = () => {
     const { fontColor, toggleTheme, isDarkTheme } = useContext(ThemeContext);
-    const { isMoody, mood, handleChangeMood } = useContext(MoodContext);
+    const { mood } = useAppSelector((state) => state.mood);
+    const dispatch = useAppDispatch();
+    const isMoody = mood === Mood.moody;
 
     return (
         <div>
@@ -43,14 +46,14 @@ const Settings: FunctionComponent = () => {
                     <input
                         id="mood"
                         type="checkbox"
-                        onChange={handleChangeMood}
+                        onChange={() => dispatch(moodToggled())}
                         checked={isMoody}
                     />
                     <span className={styles.slider} />
                 </label>
                 <img
                     className={styles.themeIcon}
-                    src={mood === 'moody' ? sad : happy}
+                    src={isMoody ? sad : happy}
                     alt="Glad eller Trist"
                 />
             </div>

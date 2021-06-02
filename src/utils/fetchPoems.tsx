@@ -1,7 +1,8 @@
+import { Mood } from '../components/Settings/moodSlice';
 import { Poem } from './types';
 
 const fetchPoems = async (
-    theme: 'happy' | 'sad',
+    theme: Mood | 'sad',
     amount: number,
     maxLength: number
 ): Promise<Poem[]> => {

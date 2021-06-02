@@ -13,9 +13,10 @@ import { Artwork, Poem } from '../../utils/types';
 import artList from '../../art/artList';
 import fetchArt from '../../utils/fetchArt';
 import fetchPoems from '../../utils/fetchPoems';
-import { MoodContext } from '../MoodProvider';
 import { ThemeContext } from '../ThemeProvider';
 import { LocalStorage, SessionStorage } from '../../utils/webStorageWrapper';
+import { useAppSelector } from '../../app/hooks';
+import { Mood } from '../Settings/moodSlice';
 
 type ViewMode = 'scrollView' | 'galleryView';
 
@@ -34,7 +35,8 @@ const GalleryController: FunctionComponent<GalleryControllerProps> = ({
         (LocalStorage.getItem('favorites') || []).sort()
     );
     const { path, url }: { path: string; url: string } = useRouteMatch();
-    const { mood } = useContext(MoodContext);
+    const { mood } = useAppSelector((state) => state.mood);
+    const isMoody = mood === Mood.moody;
     const { isDarkTheme } = useContext(ThemeContext);
 
     useEffect(() => {
@@ -133,8 +135,8 @@ const GalleryController: FunctionComponent<GalleryControllerProps> = ({
                     poem={poem}
                     artwork={{
                         title: art.title,
-                        Image: mood === 'moody' ? art.displayMoody() : art.displayHappy(),
-                        audioPath: mood === 'moody' ? art.moodyAudio : art.happyAudio
+                        Image: isMoody ? art.displayMoody() : art.displayHappy(),
+                        audioPath: isMoody ? art.moodyAudio : art.happyAudio
                     }}
                     toggleFavorite={toggleFavorite}
                     isFavorite={favorites.includes(art.title)}
@@ -153,9 +155,7 @@ const GalleryController: FunctionComponent<GalleryControllerProps> = ({
             .filter(({ art }) => displayFavorites === false || favorites.includes(art.title))
             .map(({ art }) => (
                 <Link key={`${art.artDir}_thumbnail`} to={`${url}/${art.artDir}`}>
-                    <ArtThumbnail
-                        image={mood === 'moody' ? art.displayMoody() : art.displayHappy()}
-                    />
+                    <ArtThumbnail image={isMoody ? art.displayMoody() : art.displayHappy()} />
                 </Link>
             ));
         if (tempWorks.length === 0) return noFavoritesPlaceholder();

@@ -7,7 +7,11 @@ import { ReactComponent as PauseIcon } from '../../svg/volume_off-black-48dp.svg
 import { ReactComponent as PlayIcon } from '../../svg/volume_up-black-48dp.svg';
 import IconButton from '../IconButton';
 import { ThemeContext } from '../ThemeProvider';
-import { MoodContext } from '../MoodProvider';
+// import { MoodContext } from '../MoodProvider';
+// import { useSelector } from 'react-redux';
+// import { RootState } from '../../app/store';
+import { Mood } from '../Settings/moodSlice';
+import { useAppSelector } from '../../app/hooks';
 
 export interface Artwork {
     title: string;
@@ -41,7 +45,8 @@ const Art: FunctionComponent<ArtProps> = ({
     const [audioPlayState, setAudioPlayState] = useState(false);
     const [autoPlay, setAutoPlay] = useState(isViewingArt);
     const { isDarkTheme } = useContext(ThemeContext);
-    const { isMoody } = useContext(MoodContext);
+    const { mood } = useAppSelector((state) => state.mood);
+    const isMoody = mood === Mood.moody;
 
     const toggleAudioPlay = () => {
         setAudioPlayState(!audioPlayState);
