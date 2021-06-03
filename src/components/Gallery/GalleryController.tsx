@@ -13,7 +13,6 @@ import { Artwork, Poem } from '../../utils/types';
 import artList from '../../art/artList';
 import fetchArt from '../../utils/fetchArt';
 import fetchPoems from '../../utils/fetchPoems';
-import { ThemeContext } from '../ThemeProvider';
 import { LocalStorage, SessionStorage } from '../../utils/webStorageWrapper';
 import { useAppSelector } from '../../app/hooks';
 import { Mood } from '../Settings/moodSlice';
@@ -37,7 +36,7 @@ const GalleryController: FunctionComponent<GalleryControllerProps> = ({
     const { path, url }: { path: string; url: string } = useRouteMatch();
     const { mood } = useAppSelector((state) => state.mood);
     const isMoody = mood === Mood.moody;
-    const { isDarkTheme } = useContext(ThemeContext);
+    const { isDarkTheme } = useAppSelector((state) => state.theme);
 
     useEffect(() => {
         LocalStorage.setItem('favorites', favorites);

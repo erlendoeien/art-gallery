@@ -1,13 +1,15 @@
 // eslint-disable-next-line
 import React, { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { ThemeContext } from '../ThemeProvider';
 import styles from './Navbar.module.css';
 import SettingImg from '../../svg/settings.png';
 import Settings from '../Settings';
+import { useAppSelector } from '../../app/hooks';
 
 const Navbar: React.FC = () => {
-    const { backgroundColor, navColor, boxShadow, fontColor } = useContext(ThemeContext);
+    const { backgroundColor, navColor, boxShadow, fontColor } = useAppSelector(
+        (state) => state.theme
+    );
     const [isOpen, setIsOpen] = useState(false);
     const [navbarClass, setNavbarClass] = useState('');
     const [isClicked, setIsClicked] = React.useState(false);

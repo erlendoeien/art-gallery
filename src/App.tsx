@@ -4,11 +4,11 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import GalleryController from './components/Gallery/GalleryController';
 import LandingPage from './components/LandingPage';
 import Navbar from './components/Navbar';
-import { ThemeContext } from './components/ThemeProvider';
 import './App.css';
+import { useAppSelector } from './app/hooks';
 
 const App: React.FC = () => {
-    const { fontColor, backgroundColor } = React.useContext(ThemeContext);
+    const { fontColor, backgroundColor } = useAppSelector((state) => state.theme);
     return (
         <Router>
             <div className="app" style={{ backgroundColor, color: fontColor }}>

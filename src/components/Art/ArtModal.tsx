@@ -8,7 +8,7 @@ import { ReactComponent as ExitIcon } from '../../svg/clear-black-24dp.svg';
 import { ReactComponent as Previous } from '../../svg/navigate_before-black-48dp.svg';
 import { ReactComponent as Next } from '../../svg/navigate_next-black-48dp.svg';
 import IconButton from '../IconButton';
-import { ThemeContext } from '../ThemeProvider';
+// import { ThemeContext } from '../ThemeProvider';
 import { useAppSelector } from '../../app/hooks';
 import { Mood } from '../Settings/moodSlice';
 
@@ -30,7 +30,8 @@ const ArtModal = (props: ModalProps): JSX.Element => {
     );
     const { mood } = useAppSelector((state) => state.mood);
     const isMoody = mood === Mood.moody;
-    const { backgroundColor, isDarkTheme } = useContext(ThemeContext);
+    // const { backgroundColor, isDarkTheme } = useContext(ThemeContext);
+    const { backgroundColor, isDarkTheme } = useAppSelector((state) => state.theme);
     const history = useHistory();
     // To avoid indexing artworks everytime
     const currentArtwork = artworks[artIndex];

@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import moodReducer from '../components/Settings/moodSlice';
+import themeReducer from '../components/Settings/themeSlice';
 
 const store = configureStore({
     reducer: {
-        mood: moodReducer
+        mood: moodReducer,
+        theme: themeReducer
     }
 });
 

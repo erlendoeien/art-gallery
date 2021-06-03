@@ -6,6 +6,7 @@ export enum Mood {
     happy = 'happy'
 }
 
+// TODO: Rewrite to use initial async data
 const storedIsMoody = LocalStorage.getItem('isMoody');
 const initialState = {
     mood: storedIsMoody ? Mood.moody : Mood.happy

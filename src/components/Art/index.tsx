@@ -6,10 +6,6 @@ import { ReactComponent as IsFavoriteIcon } from '../../svg/favorite-black-48dp.
 import { ReactComponent as PauseIcon } from '../../svg/volume_off-black-48dp.svg';
 import { ReactComponent as PlayIcon } from '../../svg/volume_up-black-48dp.svg';
 import IconButton from '../IconButton';
-import { ThemeContext } from '../ThemeProvider';
-// import { MoodContext } from '../MoodProvider';
-// import { useSelector } from 'react-redux';
-// import { RootState } from '../../app/store';
 import { Mood } from '../Settings/moodSlice';
 import { useAppSelector } from '../../app/hooks';
 
@@ -44,7 +40,7 @@ const Art: FunctionComponent<ArtProps> = ({
     const [audio, setAudio] = useState(new Audio(artwork.audioPath));
     const [audioPlayState, setAudioPlayState] = useState(false);
     const [autoPlay, setAutoPlay] = useState(isViewingArt);
-    const { isDarkTheme } = useContext(ThemeContext);
+    const { isDarkTheme } = useAppSelector((state) => state.theme);
     const { mood } = useAppSelector((state) => state.mood);
     const isMoody = mood === Mood.moody;
 
